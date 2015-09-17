@@ -1,0 +1,44 @@
+/* app css stylesheet */
+.main-header, .content{
+  width: 90%;
+  margin: 0 auto;
+}
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+h1, h3{margin-left: 10px;}
+
+.cards .card .average:nth-child(2){background-color: #000000!important;}
+.cards .card .average:nth-child(3){background-color: #0064ff!important;}
+.cards .card .average:nth-child(4){background-color: #ff0000!important;}
+.cards .card .average:nth-child(5){background-color: #8ec9f5!important;}
+.cards .card .average:nth-child(6){background-color: #4ac1a1!important;}
+.cards .card .average:nth-child(7){background-color: #f08e1d!important;}
+.cards .card .average:nth-child(8){background-color: #ff0000!important;}
+.cards .card .average:nth-child(9){background-color: #027900!important;}
