@@ -1,0 +1,13 @@
+<div class="card">
+	<div class="average">
+		<span><strong>{{ngModel.trend.average | number:0}}</strong> %</span>
+	</div>
+	<div class="detail">
+		<h2>{{ngModel.type}}</h2>
+		<p>Total: <strong>{{ngModel.trend.total}}</strong> tr.</p>
+		<p>Week: <strong>{{ngModel.trend.week}}</strong> tr.</p>
+		<p>
+			<span ng-class="(ngModel.trend.l_w_t == '-' ? 'down-arrow' : 'up-arrow')">{{ngModel.trend.l_w_t}}</span> <span ng-class="(ngModel.trend.l_w_t == '-' ? 'down' : 'up')">{{ngModel.trend.l_week}}%</span> on last week
+		</p>
+	</div>
+</div>
