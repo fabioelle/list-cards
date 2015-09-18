@@ -1,4 +1,4 @@
-<div ng-repeat="card in cards">
-	<cardstatus ng-model="card"></cardstatus>
+<div ng-repeat="card in cards | orderBy:'-trend.average'" class="list-cards">
+	<cardstatus ng-model="card" ng-class="colorValue(card.type)"></cardstatus>
 </div>
 

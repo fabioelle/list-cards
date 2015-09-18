@@ -34,11 +34,5 @@
 
 h1, h3{margin-left: 10px;}
 
-.cards .card .average:nth-child(2){background-color: #000000!important;}
-.cards .card .average:nth-child(3){background-color: #0064ff!important;}
-.cards .card .average:nth-child(4){background-color: #ff0000!important;}
-.cards .card .average:nth-child(5){background-color: #8ec9f5!important;}
-.cards .card .average:nth-child(6){background-color: #4ac1a1!important;}
-.cards .card .average:nth-child(7){background-color: #f08e1d!important;}
-.cards .card .average:nth-child(8){background-color: #ff0000!important;}
-.cards .card .average:nth-child(9){background-color: #027900!important;}
+.clear{clear: both;}
+

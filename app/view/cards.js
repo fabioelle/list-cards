@@ -2,15 +2,79 @@
 
 angular.module('myApp.cards', ['ngRoute'])
 
-.config(['$routeProvider', function($routeProvider) {
+.config(['$routeProvider', '$httpProvider', function($routeProvider,$httpProvider) {
   $routeProvider.when('/cards', {
     templateUrl: 'view/cards.html',
     controller: 'CardsCtrl'
   });
+
+  /*$httpProvider.defaults.useXDomain = true;
+  $httpProvider.defaults.withCredentials = true;
+  delete $httpProvider.defaults.headers.common["X-Requested-With"];
+  $httpProvider.defaults.headers.common["Accept"] = "application/json";
+  $httpProvider.defaults.headers.common["Content-Type"] = "application/json";*/
+
 }])
 
-.controller('CardsCtrl', ['$scope', function($scope) {
-	$scope.cards = [
+.controller('CardsCtrl', ['$scope','$http', 'listCardData', '$interval', '$timeout', function($scope,$http,listCardData,$interval,$timeout) {
+
+	$scope.cards = [];
+
+	$scope.typeCard = [
+		{type:"garmin", classCss:"garmin"},
+		{type:"gofree", classCss:"gofree"},
+		{type:"b&g", classCss:"beg"},
+		{type:"digital yacht", classCss:"digital_yacht"},
+		{type:"vexilar", classCss:"vexilar"},
+		{type:"simrad", classCss:"simrad"},
+		{type:"loweance", classCss:"loweance"},
+		{type:"humminbird", classCss:"humminbird"},
+		{type:"raymarine", classCss:"raymarine"}
+		];
+
+	$scope.updateData = function(){
+		listCardData.doCrossDomainGet()
+		    .then(function(data){
+		        $scope.cards = data.data;
+				console.log($scope.cards);
+		    },
+		    function(err,status){
+		        console.log("ko");
+	    });
+	}
+
+	var c=0;
+	$scope.updateData();
+	$interval(function(){
+		$scope.updateData();
+		c++;
+	},3000);
+
+	$scope.colorValue=function(myValue){
+		var classeCard = '';
+		angular.forEach($scope.typeCard, function(value) {
+		        if(myValue == value.type){
+		        	classeCard = value.classCss;
+		        }
+		    });
+		return classeCard;
+	}
+	
+			
+	/*$http({ 
+		method: 'GET', 
+		//url: 'http://dashboard-api.herokuapp.com/api/data/trend'
+		url: 'http://localhost:5000/api/data/trend'
+	}).success(function(data, status) {
+		$scope.cards = data;
+		console.log($scope.cards);
+		//$scope.loadingComplete = true;
+	})
+	.error(function(status) {
+		console.log("error!");
+	});*/
+
+	/*$scope.cards = [
 	{"type":"digital yacht","trend":
 		{"average":0.8488916370552033,"total":59116,"week":430,"l_week":0.3915955168195069,"l_w_t":"-"}
 	},
@@ -38,5 +102,5 @@ angular.module('myApp.cards', ['ngRoute'])
 	{"type":"humminbird","trend":
 		{"average":0.4604432974010706,"total":52840,"week":520,"l_week":0.09950394206680357,"l_w_t":"-"}
 	}
-	];
+	];*/
 }]);
