@@ -1,8 +1,0 @@
-{
-  "name": "angular-cardstatus-directive",
-  "version": "0.0.1",
-  "main": ["./card-status.js", "./card-status.html", "./card-status.css"],
-  "dependencies": {
-    "angular": "~1.0.4"
-  }
-}

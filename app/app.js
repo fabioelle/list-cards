@@ -9,14 +9,16 @@ angular.module('myApp', [
 config(['$routeProvider', '$httpProvider', function($routeProvider,$httpProvider) {
   $routeProvider.otherwise({redirectTo: '/cards'});
   
-  /*$httpProvider.defaults.useXDomain = true;
-  $httpProvider.defaults.withCredentials = true;
+  //$httpProvider.defaults.useXDomain = true;
+  //$httpProvider.defaults.withCredentials = true;
   delete $httpProvider.defaults.headers.common["X-Requested-With"];
-  $httpProvider.defaults.headers.common["Accept"] = "application/json";
-  $httpProvider.defaults.headers.common["Content-Type"] = "application/json";*/
+  //$httpProvider.defaults.headers.common["Accept"] = "application/json";
+  //$httpProvider.defaults.headers.common["Content-Type"] = "application/json";
+  //$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
 
 }])
 .factory('listCardData', function ($http) {
+        $http.defaults.useXDomain = true;
         return{          
             doCrossDomainGet: function() {
                 return $http({
