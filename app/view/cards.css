@@ -17,3 +17,17 @@
 .digital_yacht .card .average{background-color: #f08e1d!important;}
 .beg .card .average{background-color: #ff0000!important;}
 .simrad .card .average{background-color: #027900!important;}
+
+.view-cards{
+	min-height: 200px;
+}
+
+.error-data{ 
+	margin: 0 auto; 
+	text-align: center; 
+	display: block;
+	vertical-align: middle;
+	height: 200px;
+	position: relative;
+	line-height: 200px;
+}

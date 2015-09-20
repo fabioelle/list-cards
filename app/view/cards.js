@@ -40,6 +40,7 @@ angular.module('myApp.cards', ['ngRoute'])
 		    },
 		    function(err,status){
 		        console.log("ko");
+		        $scope.msg = "No load data";
 	    });
 	}
 
