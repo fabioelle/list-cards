@@ -16,7 +16,7 @@ angular
           return{          
               doCrossDomainGet: function() {
                   return $http({
-                      url:'http://dashboard-api.herokuapp.com/api/data/trend'
+                      url:'http://dashboard-api.herokuapp.com/api/data/trend',
                       method: 'GET'
                   })
               }        

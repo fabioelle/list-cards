@@ -51,17 +51,29 @@ Now browse to the app at 'http://localhost:8000/app/index.html'.
 ## Directory Layout
 '''
 app/                    --> all of the source files for the application
+
   app.css               --> default stylesheet
+
   app.js                --> main application module
+
   index.html            --> app layout file (the main html template file of the app)
+
   view/                --> the view1 view template and logic
+
     cards.css             --> the stylesheet view
+
     cards.html            --> the partial template
+
     cards.js              --> the controller logic
+
 bower.json            --> config file for Bower
+
 karma.conf.js         --> config file for running unit tests with Karma
+
 LICENSE               --> file for License
+
 package.json          --> config file for Package
+
 README.md             --> Readme File
 
 '''
