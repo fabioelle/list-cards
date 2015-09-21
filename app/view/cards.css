@@ -10,6 +10,7 @@
 
 .view-cards{
 	min-height: 200px;
+	position: relative;
 }
 
 .error-data{ 
@@ -21,3 +22,18 @@
 	position: relative;
 	line-height: 200px;
 }
+
+.spinnerLoading{
+	background-image: url('../images/spinner.gif'); 
+	background-repeat: no-repeat; 
+	width: 90px; 
+	height: 32px;
+	display: block;
+	position: absolute;
+	left: calc(50% - 45px);
+    top: -60px;
+    padding-top: 34px;
+    text-align: center;
+    background-position-x: center;
+    color: #858585;
+	}

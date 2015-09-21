@@ -2,5 +2,6 @@
 	<cardstatus ng-model="card" ng-class="colorValue(card.type)"></cardstatus>
 </div>
 <div class="clear"></div>
+<div class="spinnerLoading" ng-show="loadingComplete">loading</div>
 <span ng-if="msg" class="error-data">{{msg}}</span>
 

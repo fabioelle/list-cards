@@ -13,6 +13,7 @@ angular
 	.controller('CardsCtrl', ['$scope','$http', 'listCardData', '$interval', '$timeout', function($scope,$http,listCardData,$interval,$timeout) {
 
 		$scope.cards = [];
+		$scope.loadingComplete = false;
 
 		$scope.typeCard = [
 			{type:"garmin", classCss:"garmin"},
@@ -27,13 +28,14 @@ angular
 			];
 
 		$scope.updateData = function(){
+			$scope.loadingComplete = true;
 			listCardData.doCrossDomainGet()
 			    .then(function(data){
 			        $scope.cards = data.data;
-					console.log($scope.cards);
+					$scope.loadingComplete = false;
 			    },
 			    function(err,status){
-			        console.log("ko");
+			        $scope.loadingComplete = false;
 			        $scope.msg = "No load data";
 		    });
 		}
