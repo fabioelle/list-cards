@@ -2,15 +2,15 @@
   "name": "list-cards",
   "description": "List cards in AngularJS",
   "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "homepage": "https://github.com/fabioelle/list-cards",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "angular": "~1.4.6",
-    "angular-route": "~1.4.0",
+    "angular-route": "~1.4.6",
     "angular-resource": "~1.4.6",
-    "angular-loader": "~1.4.0",
-    "angular-mocks": "~1.4.0",
+    "angular-loader": "~1.4.6",
+    "angular-mocks": "~1.4.6",
     "html5-boilerplate": "~5.2.0",
     "angular-cardstatus-directive": "~0.0.0"
   }
