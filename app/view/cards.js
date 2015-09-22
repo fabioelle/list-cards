@@ -14,6 +14,7 @@ angular
 
 		$scope.cards = [];
 		$scope.loadingComplete = false;
+		$scope.errorData = false;
 
 		$scope.typeCard = [
 			{type:"garmin", classCss:"garmin"},
@@ -33,9 +34,11 @@ angular
 			    .then(function(data){
 			        $scope.cards = data.data;
 					$scope.loadingComplete = false;
+					$scope.errorData = false;
 			    },
 			    function(err,status){
 			        $scope.loadingComplete = false;
+			        $scope.errorData = true;
 			        $scope.msg = "No load data";
 		    });
 		}

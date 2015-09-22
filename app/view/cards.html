@@ -1,7 +1,7 @@
-<div ng-repeat="card in cards | orderBy:'-trend.average'" class="list-cards">
+<div ng-repeat="card in cards | orderBy:'-trend.average'" class="list-cards" ng-show="!errorData"  ng-style="{opacity : ((loadingComplete == false) && '1') || '0.1'}">
 	<cardstatus ng-model="card" ng-class="colorValue(card.type)"></cardstatus>
 </div>
 <div class="clear"></div>
 <div class="spinnerLoading" ng-show="loadingComplete">loading</div>
-<span ng-if="msg" class="error-data">{{msg}}</span>
+<span ng-show="errorData" class="error-data" ng-style="{opacity : ((loadingComplete == false) && '1') || '0.1'}">{{msg}}</span>
 
